@@ -1,0 +1,117 @@
+[versions]
+plugin_android_application = "8.2.2"
+plugin_kotlin_android = "1.9.22"
+
+appcompat = "1.6.1"
+compose = "1.8.2"
+compose_bom = "2024.02.00"
+compose_compiler = "1.5.9"
+core_ktx = "1.12.0"
+espresso = "3.5.1"
+hilt = "2.48"
+hilt_navigation_compose = "1.1.0"
+junit = "4.13.2"
+junit_ktx = "1.1.5"
+jvm_target = "17"
+kotlin = "1.9.20"
+ksp = "1.9.22-1.0.17"
+lifefycle_runtime_compose = "2.7.0"
+lifecycle_runtime_ktx = "2.7.0"
+material3 = "1.2.0"
+moshi = "1.15.0"
+multidex = "2.0.1"
+navigation = "2.7.7"
+okhttp = "4.10.0"
+retrofit = "2.9.0"
+room = "2.6.1"
+test_core_ktx = "1.5.0"
+test_ext_junit = "1.1.5"
+material = "1.11.0"
+
+[libraries]
+appcompat-appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
+
+core-ktx = { group = "androidx.core", name = "core-ktx", version.ref = "core_ktx" }
+lifecycle-runtime-ktx = { group = "androidx.lifecycle", name = "lifecycle-runtime-ktx", version.ref = "lifecycle_runtime_ktx" }
+
+# hilt
+hilt-android = { group = "com.google.dagger", name = "hilt-android", version.ref = "hilt" }
+hilt-android-compiler = { group = "com.google.dagger", name = "hilt.android.compiler", version.ref = "hilt" }
+hilt-navigation-compose = { group = "androidx.hilt", name = "hilt-navigation-compose", version.ref = "hilt_navigation_compose" }
+hilt-compiler = { group = "com.google.dagger", name = "hilt-compiler", version.ref = "hilt" }
+
+# compose
+compose-bom = { group = "androidx.compose", name = "compose-bom", version.ref = "compose_bom" }
+compose-activity = { group = "androidx.activity", name = "activity-compose", version.ref = "compose" }
+compose-ui = { group = "androidx.compose.ui", name = "ui" }
+compose-ui-graphics = { group = "androidx.compose.ui", name = "ui-graphics" }
+compose-ui-tooling-preview = { group = "androidx.compose.ui", name = "ui-tooling-preview" }
+compose-material3 = { group = "androidx.compose.material3", name = "material3", version.ref = "material3" }
+compose-ui-test-junit4 = { group = "androidx.compose.ui", name = "ui-test-junit4" }
+compose-ui-tooling = { group = "androidx.compose.ui", name = "ui-tooling" }
+compose-ui-test-manifest = { group = "androidx.compose.ui", name = "ui-test-manifest" }
+lifecycle-runtime-compose = { group = "androidx.lifecycle", name = "lifecycle-runtime-compose", version.ref = "lifefycle_runtime_compose" }
+
+# navigation
+navigation-ui = { group = "androidx.navigation", name = "navigation-ui-ktx", version.ref = "navigation" }
+navigation-testing = { group = "androidx.navigation", name = "navigation-testing", version.ref = "navigation" }
+navigation-compose = { group = "androidx.navigation", name = "navigation-compose", version.ref = "navigation" }
+
+# room
+room-runtime = { group = "androidx.room", name = "room-runtime", version.ref = "room" }
+room-paging = { group = "androidx.room", name = "room-paging", version.ref = "room" }
+room-ktx = { group = "androidx.room", name = "room-ktx", version.ref = "room" }
+room-compiler = { group = "androidx.room", name = "room-compiler", version.ref = "room" }
+room-testing = { group = "androidx.room", name = "room-testing", version.ref = "room" }
+
+junit-junit = { group = "junit", name = "junit", version.ref = "junit" }
+
+# test
+test-core-ktx = { group = "androidx.test", name = "core-ktx", version.ref = "test_core_ktx" }
+test-espresso-core = { group = "androidx.test.espresso", name = "espresso-core", version.ref = "espresso" }
+test-ext-junit = { group = "androidx.test.ext", name = "junit", version.ref = "test_ext_junit" }
+test-ext-junit-ktx = { group = "androidx.test.ext", name = "junit-ktx", version.ref = "junit_ktx" }
+
+# retrofit
+retrofit2-retrofit = { group = "com.squareup.retrofit2", name = "retrofit", version.ref = "retrofit" }
+retrofit2-converter-moshi = { group = "com.squareup.retrofit2", name = "converter-moshi", version.ref = "retrofit" }
+
+# OkHttp
+okhttp3-logging-interceptor = { group = "com.squareup.okhttp3", name = "logging-interceptor", version.ref = "okhttp" }
+
+# Moshi
+moshi-moshi = { group = "com.squareup.moshi", name = "moshi", version.ref = "moshi" }
+moshi-kotlin = { group = "com.squareup.moshi", name = "moshi-kotlin", version.ref = "moshi" }
+moshi-kotlin-codegen = { group = "com.squareup.moshi", name = "moshi-kotlin-codegen", version.ref = "moshi" }
+
+# project
+kotlin-gradle-plugin = { group = "org.jetbrains.kotlin", name = "kotlin-gradle-plugin", version.ref = "kotlin" }
+navigation-save-args-gradle-plugin = { group = "androidx.navigation", name = "navigation-safe-args-gradle-plugin", version.ref = "navigation" }
+
+#multidex
+multidex = { group = "androidx.multidex", name = "multidex", version.ref = "multidex" }
+material = { group = "com.google.android.material", name = "material", version.ref = "material" }
+
+
+[bundles]
+hilt-implementation = ["hilt-android", "hilt-navigation-compose"]
+compose-implementation = [
+    "compose-material3",
+    "compose-activity",
+    "compose-ui",
+    "compose-ui-graphics",
+    "compose-ui-tooling-preview",
+    "lifecycle-runtime-compose"
+]
+compose-debug-implementation = ["compose-ui-tooling", "compose-ui-test-manifest"]
+room-implementation = ["room-runtime", "room-paging", "room-ktx"]
+navigation-implementation = ["navigation-ui", "navigation-compose"]
+retrofit-implementation = ["retrofit2-retrofit", "retrofit2-converter-moshi"]
+moshi-implementation = ["moshi-moshi", "moshi-kotlin"]
+
+[plugins]
+android_application = { id = "com.android.application", version.ref = "plugin_android_application" }
+android_library = { id = "com.android.library", version.ref = "plugin_android_application" }
+kotlin_android = { id = "org.jetbrains.kotlin.android", version.ref = "plugin_kotlin_android" }
+dagger_hilt_android = { id = "com.google.dagger.hilt.android", version.ref = "hilt" }
+devtools_ksp = { id = "com.google.devtools.ksp", version.ref = "ksp" }
