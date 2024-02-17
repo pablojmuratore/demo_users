@@ -12,12 +12,14 @@ import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import androidx.navigation.NavGraphBuilder
 import androidx.navigation.compose.composable
 import com.pablojmuratore.demousers.features.users.R
-import com.pablojmuratore.demousers.features.users.datastates.UsersState
+import com.pablojmuratore.demousers.features.users.models.User
 import com.pablojmuratore.demousers.features.users.ui.screens.UsersListScreen
 import com.pablojmuratore.demousers.features.users.viewmodels.UsersListViewModel
 
 @OptIn(ExperimentalMaterial3Api::class)
-fun NavGraphBuilder.usersListScreenComposable() {
+fun NavGraphBuilder.usersListScreenComposable(
+    onUserClicked: (user: User) -> Unit = {}
+) {
     composable(
         route = UsersNavigation.Screens.UsersListScreen.route
     ) {
@@ -30,7 +32,8 @@ fun NavGraphBuilder.usersListScreenComposable() {
         ) { paddingValues ->
             UsersListScreen(
                 modifier = Modifier.padding(paddingValues),
-                usersState = viewModel.users.collectAsStateWithLifecycle(UsersState.Undefined).value
+                users = viewModel.users.collectAsStateWithLifecycle().value,
+                onUserClicked = onUserClicked
             )
         }
     }

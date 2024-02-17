@@ -1,9 +1,11 @@
 package com.pablojmuratore.demousers.features.users.hilt
 
-import com.pablojmuratore.demousers.features.users.converters.UserDtoEntityMapper
+import com.pablojmuratore.demousers.features.users.entitymappers.UserDtoEntityMapper
+import com.pablojmuratore.demousers.features.users.entitymappers.UserEntityMapper
 import com.pablojmuratore.demousers.features.users.repositories.IUsersRepository
 import com.pablojmuratore.demousers.features.users.repositories.UsersRepository
 import com.pablojmuratore.demousers.network.repositories.INetworkUsersRepository
+import com.pablojmuratore.demousers.room.repositories.IRoomUsersRepository
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,8 +19,15 @@ class UsersViewModelModule {
     @Provides
     fun provideUsersRepository(
         networkUsersRepository: INetworkUsersRepository,
-        userDtoEntityMapper: UserDtoEntityMapper
+        roomUsersRepository: IRoomUsersRepository,
+        userDtoEntityMapper: UserDtoEntityMapper,
+        userEntityMapper: UserEntityMapper
     ): IUsersRepository {
-        return UsersRepository(networkUsersRepository, userDtoEntityMapper)
+        return UsersRepository(
+            networkUsersRepository,
+            roomUsersRepository,
+            userDtoEntityMapper,
+            userEntityMapper
+        )
     }
 }

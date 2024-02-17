@@ -11,7 +11,8 @@ import com.pablojmuratore.demousers.features.users.models.User
 
 @Composable
 fun UsersList(
-    users: List<User>
+    users: List<User>,
+    onUserClicked: (user: User) -> Unit = {}
 ) {
     LazyColumn(
         modifier = Modifier.fillMaxWidth(),
@@ -22,8 +23,9 @@ fun UsersList(
             key = { user -> user.id }
         ) { user ->
             UserListItem(
-                name = user.name,
-                email = user.email
+                name = user.userName,
+                email = user.email,
+                onClicked = { onUserClicked(user) }
             )
         }
     }

@@ -11,9 +11,11 @@
             <option value="$PROJECT_DIR$" />
             <option value="$PROJECT_DIR$/app" />
             <option value="$PROJECT_DIR$/core" />
+            <option value="$PROJECT_DIR$/core-compose" />
             <option value="$PROJECT_DIR$/features" />
             <option value="$PROJECT_DIR$/features/users" />
             <option value="$PROJECT_DIR$/network" />
+            <option value="$PROJECT_DIR$/room" />
             <option value="$PROJECT_DIR$/theme" />
           </set>
         </option>

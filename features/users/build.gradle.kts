@@ -61,8 +61,10 @@ dependencies {
     kapt(libs.hilt.compiler)
 
     implementation(project(":core"))
+    implementation(project(":core-compose"))
     implementation(project(":network"))
     implementation(project(":theme"))
+    implementation(project(":room"))
 }
 
 kapt {
