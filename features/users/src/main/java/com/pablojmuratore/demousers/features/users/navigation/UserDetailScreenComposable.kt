@@ -14,7 +14,8 @@ import com.pablojmuratore.demousers.features.users.ui.screens.UserDetailScreen
 import com.pablojmuratore.demousers.features.users.viewmodels.UserDetailViewModel
 
 fun NavGraphBuilder.userDetailScreenComposable(
-    onBackClicked: () -> Unit = {}
+    onBackClicked: () -> Unit = {},
+    onWebsiteClicked: (url: String) -> Unit = {}
 ) {
     composable(
         route = UsersNavigation.Screens.UserDetailScreen.route,
@@ -39,7 +40,8 @@ fun NavGraphBuilder.userDetailScreenComposable(
                 modifier = Modifier.padding(paddingValues),
                 userName = user?.userName ?: "",
                 phone = user?.phone,
-                website = user?.website
+                website = user?.website,
+                onWebsiteClicked = { onWebsiteClicked(user?.website ?: "") }
             )
         }
     }

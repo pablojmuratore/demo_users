@@ -1,12 +1,10 @@
 plugins {
     alias(libs.plugins.android.library)
     alias(libs.plugins.kotlin.android)
-    alias(libs.plugins.dagger.hilt.android)
-    id("kotlin-kapt")
 }
 
 android {
-    namespace = "com.pablojmuratore.demousers.features.users"
+    namespace = "com.pablojmuratore.demousers.webcontainer"
     compileSdk = 34
 
     defaultConfig {
@@ -56,18 +54,5 @@ dependencies {
     implementation(libs.bundles.navigation.implementation)
     androidTestImplementation(libs.navigation.testing)
 
-    // hilt
-    implementation(libs.bundles.hilt.implementation)
-    kapt(libs.hilt.compiler)
-
-    implementation(project(":core"))
     implementation(project(":core-compose"))
-    implementation(project(":features:webcontainer"))
-    implementation(project(":network"))
-    implementation(project(":theme"))
-    implementation(project(":room"))
-}
-
-kapt {
-    correctErrorTypes = true
 }

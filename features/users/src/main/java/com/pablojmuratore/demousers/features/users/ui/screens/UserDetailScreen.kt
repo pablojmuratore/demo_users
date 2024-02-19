@@ -1,6 +1,7 @@
 package com.pablojmuratore.demousers.features.users.ui.screens
 
 import android.content.res.Configuration
+import androidx.compose.foundation.clickable
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
@@ -20,7 +21,8 @@ fun UserDetailScreen(
     modifier: Modifier = Modifier,
     userName: String,
     phone: String? = null,
-    website: String? = null
+    website: String? = null,
+    onWebsiteClicked: () -> Unit = {}
 ) {
     Surface(
         modifier = modifier.fillMaxSize()
@@ -38,7 +40,10 @@ fun UserDetailScreen(
                 )
             )
             Text("phone: $phone")
-            Text("website: ${website}")
+            Text(
+                modifier = Modifier.clickable { onWebsiteClicked() },
+                text = "website: ${website}"
+            )
         }
     }
 }

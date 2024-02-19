@@ -21,9 +21,10 @@ dependencyResolutionManagement {
 
 rootProject.name = "Demo Users"
 include(":app")
-include(":theme")
-include(":features:users")
-include(":network")
 include(":core")
-include(":room")
 include(":core-compose")
+include(":features:users")
+include(":features:webcontainer")
+include(":network")
+include(":room")
+include(":theme")
