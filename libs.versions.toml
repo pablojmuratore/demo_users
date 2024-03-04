@@ -1,5 +1,5 @@
 [versions]
-plugin_android_application = "8.2.2"
+plugin_android_application = "8.3.0"
 plugin_kotlin_android = "1.9.22"
 
 appcompat = "1.6.1"
