@@ -42,7 +42,7 @@ fun UserDetailScreen(
             Text("phone: $phone")
             Text(
                 modifier = Modifier.clickable { onWebsiteClicked() },
-                text = "website: ${website}"
+                text = "website: $website"
             )
         }
     }

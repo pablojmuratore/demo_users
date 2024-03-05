@@ -28,7 +28,7 @@ fun UsersListScreen(
                 .fillMaxSize()
                 .padding(16.dp)
         ) {
-            if (!users.isEmpty()) {
+            if (users.isNotEmpty()) {
                 UsersList(
                     users = users,
                     onUserClicked = onUserClicked
